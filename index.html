@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>UDevTechz</title>
+
+
+   <style>
+      * {
+         padding: 0;
+         margin: 0;
+         box-sizing: border-box;
+      }
+
+      html,
+      body,
+      main {
+         height: 100%;
+         width: 100%;
+      }
+
+      main {
+         background: url("./desktop.svg") no-repeat;
+         border: 1px solid red;
+         background-size: cover;
+         position: relative;
+      }
+
+      .timer {
+         position: absolute;
+         display: flex;
+         align-items: center;
+         justify-content: space-evenly;
+         bottom: 12%;
+         left: 2%;
+      }
+
+      .stopwatch {
+         background: url("./stopwatch.svg") no-repeat;
+         width: 100px;
+         height: 100px;
+      }
+
+      .count {
+         width: 98px;
+         height: 90px;
+         font-size: 28px;
+         font-weight: 600;
+         font-family: sans-serif;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         background: url("./timer-blob.svg") no-repeat;
+         color: #3FA690;
+         margin: 12px;
+         position: relative;
+      }
+
+      .days:after,
+      .hours:after,
+      .minutes:after {
+         content: ":";
+         position: absolute;
+         right: -15px;
+         color: #000;
+         font-size: 40px;
+         font-weight: 600;
+      }
+   </style>
+</head>
+
+<body>
+   <main>
+      <div class="timer">
+         <div class="stopwatch"></div>
+         <div class="count days"> 01</div>
+         <div class="count hours"> 02</div>
+         <div class="count minutes"> 03</div>
+         <div class="count seconds"> 03</div>
+      </div>
+   </main>
+   <script>
+      // Set the date we're counting down to
+      const countDownDate = new Date("Jan 1, 2022 00:00:00").getTime();
+
+      // Update the count down every 1 second
+      const x = setInterval(function () {
+
+         // Get today's date and time
+         const now = new Date().getTime();
+
+         // Find the timeLeft between now and the count down date
+         const timeLeft = countDownDate - now;
+
+         // Time calculations for days, hours, minutes and seconds
+         const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+         const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+         const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+         const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+         // Output the time
+         document.querySelector(".days").innerHTML = days + " d"
+         document.querySelector(".hours").innerHTML = hours + " h"
+         document.querySelector(".minutes").innerHTML = minutes + " m"
+         document.querySelector(".seconds").innerHTML = seconds + " s"
+
+         // If the count down is over, write some text 
+         if (timeLeft < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+         }
+      }, 1000);
+   </script>
+
+</body>
+
+</html>
