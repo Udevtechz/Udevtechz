@@ -77,9 +77,6 @@ main {
    main {
       min-height: 100vh;
       height: auto;
-      /* background: url("./small.svg") no-repeat;
-      background-size: 100% 100%;
-      background-position: 0px; */
       background: none;
       background-image: none;
    }
@@ -89,7 +86,7 @@ main {
    }
 
    .timer {
-      top: 35%;
+      top: 34%;
       height: 70px;
       left: 0;
       right: 0;
@@ -104,14 +101,15 @@ main {
       width: 68px;
       height: 60px;
       margin: 5px;
-      font-size: 20px;
+      font-size: 18px;
+      font-weight: 550;
    }
 
    .days:after,
    .hours:after,
    .minutes:after {
       right: -8px;
-      font-size: 30px;
+      font-size: 28px;
       font-weight: 600;
    }
 }
