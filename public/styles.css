@@ -17,6 +17,10 @@ main {
    position: relative;
 }
 
+main img {
+   display: none;
+}
+
 .timer {
    position: absolute;
    display: flex;
@@ -60,9 +64,18 @@ main {
 
 /* medium size devices */
 @media screen and (max-width: 1100px) {
+
+   html,
+   body {
+      min-width: 100vw;
+      min-height: 100vh;
+   }
+
    main {
       background: url("./medium.svg") no-repeat;
+      background-size: cover;
    }
+
 }
 
 @media screen and (max-width: 450px) {
@@ -77,13 +90,14 @@ main {
    main {
       min-height: 100vh;
       height: auto;
-      background: none;
-      background-image: none;
+      background: url("./small.svg") no-repeat;
    }
 
+   /* 
    main img {
       width: 100%;
-   }
+      display: block;
+   } */
 
    .timer {
       top: 34%;
