@@ -69,15 +69,23 @@ main {
 
    html,
    body {
-      min-height: 120vh;
-      height: 120vh;
+      min-height: 100vh;
+      height: auto;
       width: 100vw;
    }
 
    main {
-      background: url("./small.svg") no-repeat;
+      min-height: 100vh;
+      height: auto;
+      /* background: url("./small.svg") no-repeat;
       background-size: 100% 100%;
-      background-position: 0px;
+      background-position: 0px; */
+      background: none;
+      background-image: none;
+   }
+
+   main img {
+      width: 100%;
    }
 
    .timer {
