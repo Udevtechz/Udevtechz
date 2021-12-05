@@ -108,8 +108,8 @@ main {
    .days:after,
    .hours:after,
    .minutes:after {
-      right: -8px;
+      right: -10px;
       font-size: 28px;
-      font-weight: 600;
+      font-weight: 550;
    }
 }
